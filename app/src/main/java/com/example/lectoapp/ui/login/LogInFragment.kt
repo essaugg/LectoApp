@@ -27,5 +27,7 @@ class LogInFragment : Fragment() {
         }
         return binding.root
 
+
+
     }
 }
