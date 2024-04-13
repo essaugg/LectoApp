@@ -2,4 +2,34 @@
     <string name="app_name">LectoApp</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="stringWelcome">Bienvenido!</string>
+
+    <string name="stringUser">Usuario</string>
+
+    <string name="stringPassword">Contraseña</string>
+
+    <string name="stringForgotPassword">¿Olvidaste tu contraseña?</string>
+
+    <string name="stringLogIn">Iniciar sesión</string>
+
+    <string name="stringWithoutAccount">¿No tienes una cuenta?</string>
+
+    <string name="stringSignUp">Registrate</string>
+
+    <string name="stringForgotPassword2">Ingresa el correo electrónico asociado con tu cuenta y te enviaremos un link para cambiar tu contraseña. </string>
+
+    <string name="stringEmail">Correo electrónico</string>
+
+    <string name="stringContinue">Continuar</string>
+
+    <string name="stringSignUp2">Registrate para continuar</string>
+
+    <string name="stringLogIn2">¿Ya tienes una cuenta?</string>
+
+    <string name="stringLogIn3">Inicia sesión</string>
+
+
+
+
 </resources>

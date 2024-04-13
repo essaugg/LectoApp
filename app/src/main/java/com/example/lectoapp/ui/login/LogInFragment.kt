@@ -25,6 +25,15 @@ class LogInFragment : Fragment() {
         binding.test.setOnClickListener {
             findNavController().navigate(R.id.action_logInFragment_to_signUpFragment)
         }
+
+        binding.txtPassword.setOnClickListener {
+            findNavController().navigate(R.id.action_logInFragment_to_forgotPasswordFragment)
+        }
+
+        binding.btnLogIn.setOnClickListener {
+            findNavController().navigate(R.id.action_logInFragment_to_signUpFragment)
+        }
+
         return binding.root
 
 
