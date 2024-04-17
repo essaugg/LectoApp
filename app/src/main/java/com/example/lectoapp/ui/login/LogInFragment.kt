@@ -22,15 +22,16 @@ class LogInFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentLogInBinding.inflate(inflater, container, false)
 
-        binding.test.setOnClickListener {
-            findNavController().navigate(R.id.action_logInFragment_to_signUpFragment)
-        }
 
         binding.txtPassword.setOnClickListener {
             findNavController().navigate(R.id.action_logInFragment_to_forgotPasswordFragment)
         }
 
         binding.btnLogIn.setOnClickListener {
+            findNavController().navigate(R.id.action_logInFragment_to_homeFragment)
+        }
+
+        binding.txtSignup.setOnClickListener {
             findNavController().navigate(R.id.action_logInFragment_to_signUpFragment)
         }
 

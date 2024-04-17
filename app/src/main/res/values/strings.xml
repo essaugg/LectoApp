@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">LectoApp</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="stringTest">Home Fragment</string>
 
     <string name="stringWelcome">Bienvenido!</string>
 
@@ -25,11 +25,11 @@
 
     <string name="stringSignUp2">Registrate para continuar</string>
 
+    <string name="stringSignUp3">Registrarse</string>
+
     <string name="stringLogIn2">¿Ya tienes una cuenta?</string>
 
     <string name="stringLogIn3">Inicia sesión</string>
-
-
 
 
 </resources>

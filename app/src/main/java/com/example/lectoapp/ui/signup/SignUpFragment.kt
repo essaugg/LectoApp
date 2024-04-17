@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.lectoapp.R
-import com.example.lectoapp.databinding.FragmentLogInBinding
 import com.example.lectoapp.databinding.FragmentSignUpBinding
 
 class SignUpFragment : Fragment() {
@@ -29,6 +28,10 @@ class SignUpFragment : Fragment() {
 
         binding.btnBack2.setOnClickListener {
             findNavController().navigate(R.id.action_signUpFragment_to_logInFragment)
+        }
+
+        binding.btnLogIn2.setOnClickListener {
+            findNavController().navigate(R.id.action_signUpFragment_to_homeFragment)
         }
 
         return binding.root
