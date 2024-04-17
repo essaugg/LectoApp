@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
-        android:text="@string/stringWelcome"
+        android:text="@string/string_welcome"
         android:textAlignment="center"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,7 +28,7 @@
         android:background="@drawable/cs_input"
         android:drawableStart="@drawable/cs_user_icon"
         android:drawablePadding="10dp"
-        android:hint="@string/stringUser"
+        android:hint="@string/string_user"
         android:autofillHints="username"
         android:inputType="text"
         android:paddingStart="10dp"
@@ -45,7 +45,7 @@
         android:layout_width="339dp"
         android:layout_height="45dp"
         android:layout_marginTop="10dp"
-        android:hint="@string/stringPassword"
+        android:hint="@string/string_password"
         android:autofillHints="password"
         android:paddingStart="10dp"
         android:paddingEnd="10dp"
@@ -63,9 +63,8 @@
         android:layout_height="20dp"
         android:layout_marginTop="8dp"
         android:gravity="end"
-        android:text="@string/stringForgotPassword"
+        android:text="@string/string_forgot_password"
         android:textColor="@android:color/darker_gray"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editPassword"
@@ -76,8 +75,7 @@
         android:layout_width="339dp"
         android:layout_height="45dp"
         android:layout_marginTop="32dp"
-
-        android:text="@string/stringLogIn"
+        android:text="@string/string_log_in"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtPassword" />
@@ -97,7 +95,7 @@
             android:id="@+id/txtAccount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/stringWithoutAccount"
+            android:text="@string/string_without_account"
             android:textColor="@android:color/darker_gray" />
 
         <TextView
@@ -105,7 +103,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="6dp"
-            android:text="@string/stringSignUp"
+            android:text="@string/string_sign_up"
             android:textColor="@color/design_default_color_primary" />
 
     </LinearLayout>

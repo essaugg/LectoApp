@@ -1,35 +1,36 @@
 <resources>
     <string name="app_name">LectoApp</string>
+
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="stringTest">Home Fragment</string>
 
-    <string name="stringWelcome">Bienvenido!</string>
+    <string name="string_test">Home Fragment</string>
 
-    <string name="stringUser">Usuario</string>
 
-    <string name="stringPassword">Contraseña</string>
+    <string name="string_welcome">Bienvenido!</string>
 
-    <string name="stringForgotPassword">¿Olvidaste tu contraseña?</string>
+    <string name="string_user">Usuario</string>
+    <string name="string_email">Correo electrónico</string>
+    <string name="string_password">Contraseña</string>
 
-    <string name="stringLogIn">Iniciar sesión</string>
 
-    <string name="stringWithoutAccount">¿No tienes una cuenta?</string>
+    <string name="string_forgot_password">¿Olvidaste tu contraseña?</string>
+    <string name="string_forgot_password2">Ingresa el correo electrónico asociado con tu cuenta y te enviaremos un link para cambiar tu contraseña. </string>
 
-    <string name="stringSignUp">Registrate</string>
 
-    <string name="stringForgotPassword2">Ingresa el correo electrónico asociado con tu cuenta y te enviaremos un link para cambiar tu contraseña. </string>
+    <string name="string_log_in">Iniciar sesión</string>
+    <string name="string_log_in2">Inicia sesión</string>
 
-    <string name="stringEmail">Correo electrónico</string>
 
-    <string name="stringContinue">Continuar</string>
+    <string name="string_without_account">¿No tienes una cuenta?</string>
+    <string name="string_with_account">¿Ya tienes una cuenta?</string>
 
-    <string name="stringSignUp2">Registrate para continuar</string>
 
-    <string name="stringSignUp3">Registrarse</string>
+    <string name="string_sign_up">Registrate</string>
+    <string name="string_sign_up2">Registrarse</string>
 
-    <string name="stringLogIn2">¿Ya tienes una cuenta?</string>
 
-    <string name="stringLogIn3">Inicia sesión</string>
+    <string name="string_continue">Registrate para continuar</string>
+    <string name="string_continue2">Continuar</string>
 
 
 </resources>

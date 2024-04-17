@@ -23,7 +23,7 @@
         android:layout_width="133dp"
         android:layout_height="39dp"
         android:layout_marginTop="40dp"
-        android:text="@string/stringWelcome"
+        android:text="@string/string_welcome"
         android:textAlignment="center"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="@string/stringSignUp2"
+        android:text="@string/string_continue"
         android:textAlignment="center"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,7 +51,7 @@
         android:background="@drawable/cs_input"
         android:drawableStart="@drawable/cs_user_icon"
         android:drawablePadding="10dp"
-        android:hint="@string/stringUser"
+        android:hint="@string/string_user"
         android:autofillHints="username"
         android:inputType="text"
         android:paddingStart="10dp"
@@ -69,7 +69,7 @@
         android:background="@drawable/cs_input"
         android:drawableStart="@drawable/cs_mail_icon"
         android:drawablePadding="10dp"
-        android:hint="@string/stringEmail"
+        android:hint="@string/string_email"
         android:autofillHints="emailAddress"
         android:inputType="text"
         android:paddingStart="10dp"
@@ -87,7 +87,7 @@
         android:background="@drawable/cs_input"
         android:drawableStart="@drawable/cs_lock_icon"
         android:drawablePadding="10dp"
-        android:hint="@string/stringPassword"
+        android:hint="@string/string_password"
         android:autofillHints="password"
         android:inputType="text"
         android:paddingStart="10dp"
@@ -102,7 +102,7 @@
         android:layout_width="297dp"
         android:layout_height="44dp"
         android:layout_marginTop="8dp"
-        android:text="@string/stringSignUp3"
+        android:text="@string/string_continue2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editPassword2" />
@@ -122,7 +122,7 @@
             android:id="@+id/txtAccount3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/stringLogIn2"
+            android:text="@string/string_with_account"
             android:textColor="@android:color/darker_gray" />
 
         <TextView
@@ -130,7 +130,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="6dp"
-            android:text="@string/stringLogIn3"
+            android:text="@string/string_log_in2"
             android:textColor="@color/design_default_color_primary" />
 
     </LinearLayout>
