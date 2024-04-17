@@ -2,6 +2,12 @@
     <string name="app_name">LectoApp</string>
 
     <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="initial_test_header">Cuestionario inicial</string>
+    <string name="question_sound_text">¿Que letra escuchas?</string>
+    <string name="question_number_text">¿Que número este?</string>
+    <string name="question_word_text">¿Que es esto?</string>
+    <string name="question_complete_word_text">Completa la palabra</string>
 
     <string name="string_test">Home Fragment</string>
 
@@ -31,6 +37,7 @@
 
     <string name="string_continue">Registrate para continuar</string>
     <string name="string_continue2">Continuar</string>
+    <string name="next">Siguiente</string>
 
 
 </resources>

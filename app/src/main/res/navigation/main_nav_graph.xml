@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav_graph"
-    app:startDestination="@id/logInFragment">
+    app:startDestination="@id/initialQuestionFragment">
 
     <fragment
         android:id="@+id/logInFragment"
@@ -48,5 +48,8 @@
         android:id="@+id/homeFragment"
         android:name="com.example.lectoapp.ui.home.HomeFragment"
         android:label="HomeFragment" />
-
+    <fragment
+        android:id="@+id/initialQuestionFragment"
+        android:name="com.example.lectoapp.ui.initial_test.InitialTestFragment"
+        android:label="InitialQuestionFragment" />
 </navigation>
