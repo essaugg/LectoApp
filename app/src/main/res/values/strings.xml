@@ -39,5 +39,8 @@
     <string name="string_continue2">Continuar</string>
     <string name="next">Siguiente</string>
 
+    <string name="string_finish_questionary">Cuestionario terminado</string>
+    <string name="string_send_answers">Enviar respuestas</string>
+
 
 </resources>
