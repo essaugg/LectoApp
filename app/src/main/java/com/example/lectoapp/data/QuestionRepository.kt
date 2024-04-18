@@ -29,7 +29,7 @@ object QuestionRepository {
         ),
         InitialQuestion.Sound(
             expectedAnswer = "u",
-            soundRawId = R.raw.alphabet_e,
+            soundRawId = R.raw.alphabet_u,
             options = listOf(
                 InitialQuestionOption(
                     optionValue = "a",
@@ -42,7 +42,7 @@ object QuestionRepository {
                     unselectedResId = R.drawable.u_unselected
                 ),
                 InitialQuestionOption(
-                    optionValue = "u",
+                    optionValue = "i",
                     selectedResId = R.drawable.i,
                     unselectedResId = R.drawable.i_unselected
                 ),
@@ -66,7 +66,7 @@ sealed class InitialQuestion {
 
     data class Number(
         val expectedAnswer: String,
-        val options: List<String>
+        val options: List<InitialQuestionOption>
     ): InitialQuestion()
 
     data class Word(
@@ -76,6 +76,6 @@ sealed class InitialQuestion {
 
     data class CompleteWord(
         val expectedAnswer: String,
-        val answer: String
+        val options: List<InitialQuestionOption>
     ): InitialQuestion()
 }

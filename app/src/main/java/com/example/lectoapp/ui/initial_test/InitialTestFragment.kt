@@ -78,14 +78,23 @@ class InitialTestFragment: Fragment() {
                 mediaPlayer.reset()
                 mediaPlayer.setDataSource(requireContext(), currentQuestion.soundRawId.toUri(requireContext()))
                 mediaPlayer.prepare()
+                renderSoundLayout()
                 renderSoundOptions(currentQuestion.options)
                 renderSoundSelection(state.currentSelection, currentOptions)
                 renderNextButton(state.currentSelection)
                 setupSoundQuestionClickListeners(state.currentSelection)
             }
 
+            is InitialQuestion.Number -> {
+                // render number question
+            }
+
             else -> TODO()
         }
+    }
+
+    private fun renderSoundLayout() {
+        binding.soundQuestionLayout.root.visibility = View.VISIBLE
     }
 
     private fun renderNextButton(selection: InitialQuestionOption?) {

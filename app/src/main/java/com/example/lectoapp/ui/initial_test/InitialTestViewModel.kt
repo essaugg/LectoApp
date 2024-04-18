@@ -51,7 +51,7 @@ class InitialTestViewModel @Inject constructor(
     data class InitialTestUiState(
         val questions: List<InitialQuestion> = emptyList(),
         val currentSelection: InitialQuestionOption? = null,
-        val answers: MutableList<String> = mutableListOf(),
+        val answers: MutableList<String> = mutableListOf(), // Remove this, add to InitialQuestion
         val currentQuestionIndex: Int = 0
     )
 }
