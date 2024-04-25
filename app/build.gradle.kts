@@ -19,7 +19,12 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
-
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.2"
+    }
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -73,5 +78,13 @@ dependencies {
 
     implementation(libs.retrofit)
     implementation(libs.retrofit.converter.moshi)
+
+    // Compose
+    implementation(libs.androidx.compose.material)
+    implementation(libs.androidx.compose.compiler)
+    implementation(libs.androidx.compose.ui.activity)
+    implementation(libs.androidx.compose.ui.preview)
+    implementation(libs.androidx.lifecycle.lifecycle.runtime.compose)
+    debugImplementation(libs.androidx.compose.ui.tooling)
 
 }
