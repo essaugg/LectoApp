@@ -11,6 +11,7 @@ class HomeFragment : Fragment() {
     private lateinit var composeView: ComposeView
 
     override fun onCreateView(
+
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
