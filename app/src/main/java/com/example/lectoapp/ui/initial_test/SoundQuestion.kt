@@ -1,6 +1,7 @@
 package com.example.lectoapp.ui.initial_test
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -27,7 +28,8 @@ import com.example.lectoapp.R
 @Composable
 fun SoundQuestion(
     modifier: Modifier = Modifier,
-    question: TestQuestion.Sound
+    question: TestQuestion,
+    onAnswer: (TestOption) -> Unit
 ) {
     val grayScaleMatrix = ColorMatrix(
         floatArrayOf(
@@ -79,7 +81,7 @@ fun SoundQuestion(
 
             question.options.forEach { option ->
                 Image(
-                    modifier = Modifier.size(120.dp),
+                    modifier = Modifier.size(120.dp).clickable { onAnswer(option) },
                     painter = painterResource(id = option.resId),
                     contentDescription = "",
                     colorFilter = if (option.id == question.answer?.id) null
@@ -98,7 +100,7 @@ private fun SoundQuestionPreview() {
         Surface {
             SoundQuestion(
                 modifier = Modifier.fillMaxSize(),
-                question = TestQuestion.Sound(
+                question = TestQuestion(
                     resId = R.raw.alphabet_e,
                     text = "¿Que letra escuchas?",
                     options = listOf(
@@ -117,8 +119,10 @@ private fun SoundQuestionPreview() {
                             optionText = "",
                             resId = R.drawable.i
                         )
-                    )
-                )
+                    ),
+                    questionType = QuestionType.Sound
+                ),
+                onAnswer = {}
             )
         }
     }

@@ -16,7 +16,11 @@ import androidx.compose.ui.unit.dp
 import com.example.lectoapp.R
 
 @Composable
-fun HomeScreen() {
+fun HomeScreen(
+    onExercisesClick: () -> Unit,
+    onAdvicesClick: () -> Unit,
+    onMemoryGameClick: () -> Unit
+) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -70,7 +74,11 @@ fun HomeScreen() {
 private fun HomeScreenPreview() {
     MaterialTheme {
         Surface {
-            HomeScreen()
+            HomeScreen(
+                onAdvicesClick = {},
+                onExercisesClick = {},
+                onMemoryGameClick = {}
+            )
         }
     }
 }

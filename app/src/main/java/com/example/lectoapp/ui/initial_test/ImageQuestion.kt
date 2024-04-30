@@ -27,7 +27,7 @@ import com.example.lectoapp.R
 @Composable
 fun ImageQuestion(
     modifier: Modifier = Modifier,
-    question: TestQuestion.Image
+    question: TestQuestion
 ) {
     val grayScaleMatrix = ColorMatrix(
         floatArrayOf(
@@ -99,7 +99,7 @@ private fun ImageQuestionPreview() {
         Surface {
             ImageQuestion(
                 modifier = Modifier.fillMaxSize(),
-                question = TestQuestion.Image(
+                question = TestQuestion(
                     resId = R.drawable.a,
                     text = "¿Que letra(numero) es este?",
                     options = listOf(
@@ -118,7 +118,8 @@ private fun ImageQuestionPreview() {
                             optionText = "",
                             resId = R.drawable.i
                         )
-                    )
+                    ),
+                    questionType = QuestionType.Image
                 )
             )
         }

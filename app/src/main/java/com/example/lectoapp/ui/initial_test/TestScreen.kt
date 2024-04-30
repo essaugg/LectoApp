@@ -7,9 +7,23 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
-fun TestScreen() {
-    Column {
-        
+fun TestScreen(
+    questions: List<TestQuestion>,
+    currentQuestionIndex: Int,
+    onAnswer: (TestOption) -> Unit
+) {
+    val currentQuestion = questions[currentQuestionIndex]
+    when(currentQuestion.questionType) {
+        QuestionType.Sound -> {
+            SoundQuestion(
+                question = currentQuestion,
+                onAnswer = onAnswer
+            )
+        }
+
+        QuestionType.Image -> {
+
+        }
     }
 }
 
@@ -18,7 +32,11 @@ fun TestScreen() {
 private fun TestScreenPreview() {
     MaterialTheme {
         Surface {
-            TestScreen()
+            TestScreen(
+                questions = emptyList(),
+                currentQuestionIndex = -1,
+                onAnswer = {}
+            )
         }
     }
 }
