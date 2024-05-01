@@ -37,6 +37,7 @@ fun HomeScreen(
             text = "Ejercicios",
             resId = R.drawable.menu_image_exercises,
             onClick = {
+                onExercisesClick()
 
             }
         )
