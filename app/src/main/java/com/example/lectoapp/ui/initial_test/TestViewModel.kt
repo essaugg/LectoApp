@@ -93,7 +93,9 @@ class TestViewModel @Inject constructor(
     }
 
     fun onContinue() {
-        currentQuestionIndex.intValue += 1
+        if(currentQuestionIndex.intValue<=(questions.size-2)){
+            currentQuestionIndex.intValue += 1
+        }
     }
 }
 

@@ -10,14 +10,17 @@ import androidx.compose.ui.tooling.preview.Preview
 fun TestScreen(
     questions: List<TestQuestion>,
     currentQuestionIndex: Int,
-    onAnswer: (TestOption) -> Unit
+    onAnswer: (TestOption) -> Unit,
+    onContinue:()-> Unit
+
 ) {
     val currentQuestion = questions[currentQuestionIndex]
     when(currentQuestion.questionType) {
         QuestionType.Sound -> {
             SoundQuestion(
                 question = currentQuestion,
-                onAnswer = onAnswer
+                onAnswer = onAnswer,
+                onContinue = onContinue
             )
         }
 
@@ -35,7 +38,8 @@ private fun TestScreenPreview() {
             TestScreen(
                 questions = emptyList(),
                 currentQuestionIndex = -1,
-                onAnswer = {}
+                onAnswer = {},
+                onContinue = {}
             )
         }
     }

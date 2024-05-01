@@ -31,7 +31,12 @@ class TestFragment : Fragment() {
             TestScreen(
                 questions = viewModel.questions,
                 currentQuestionIndex = viewModel.currentQuestionIndex.intValue,
-                onAnswer = viewModel::onAnswer
+                onAnswer = {
+                    viewModel.onAnswer(it)
+                },
+                onContinue = {
+                    viewModel.onContinue()
+                }
             )
         }
     }

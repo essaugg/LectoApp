@@ -25,13 +25,14 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.lectoapp.R
 
+
 @Composable
-fun SoundQuestion(
+fun ImagesQuestion(
     modifier: Modifier = Modifier,
     question: TestQuestion,
     onAnswer: (TestOption) -> Unit,
     onContinue:() -> Unit
-) {
+){
     val grayScaleMatrix = ColorMatrix(
         floatArrayOf(
             0.33f, 0.33f, 0.33f, 0f, 0f,
@@ -70,7 +71,7 @@ fun SoundQuestion(
             ) {
                 Spacer(modifier = Modifier.height(16.dp))
 
-                IconButton(
+                /**IconButton(
                     onClick = {
 
                     },
@@ -80,7 +81,7 @@ fun SoundQuestion(
                             contentDescription = ""
                         )
                     }
-                )
+                )**/
 
                 Spacer(modifier = Modifier.height(32.dp))
 
