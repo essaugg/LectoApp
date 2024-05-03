@@ -81,7 +81,7 @@ fun ImagesQuestion(
                             contentDescription = ""
                         )
                     }
-                ) PROYECTO ACTUALIZADO**/
+                ) PROYECTO ACTUALIZADOO**/
 
                 Spacer(modifier = Modifier.height(32.dp))
 
