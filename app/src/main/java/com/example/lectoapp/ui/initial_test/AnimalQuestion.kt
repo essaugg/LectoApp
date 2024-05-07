@@ -9,8 +9,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.Button
-import androidx.compose.material.Icon
-import androidx.compose.material.IconButton
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Surface
@@ -25,14 +23,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.lectoapp.R
 
-
 @Composable
-fun ImagesQuestion(
+fun AnimalQuestion(
     modifier: Modifier = Modifier,
     question: TestQuestion,
     onAnswer: (TestOption) -> Unit,
     onContinue:() -> Unit
-){
+) {
     val grayScaleMatrix = ColorMatrix(
         floatArrayOf(
             0.33f, 0.33f, 0.33f, 0f, 0f,
@@ -71,17 +68,12 @@ fun ImagesQuestion(
             ) {
                 Spacer(modifier = Modifier.height(16.dp))
 
-                /**IconButton(
-                    onClick = {
-
-                    },
-                    content = {
-                        Icon(
-                            painter = painterResource(id = R.drawable.ic_speaker),
-                            contentDescription = ""
-                        )
-                    }
-                ) PROYECTO ACTUALIZADOO**/
+                Image(
+                    modifier = Modifier
+                        .size(120.dp),
+                    painter = painterResource(id = R.drawable.img_gato),
+                    contentDescription = "",
+                )
 
                 Spacer(modifier = Modifier.height(32.dp))
 
@@ -107,32 +99,32 @@ fun ImagesQuestion(
 
 @Preview
 @Composable
-private fun SoundQuestionPreview() {
+private fun AnimalQuestionPreview() {
     MaterialTheme {
         Surface {
-            SoundQuestion(
+            AnimalQuestion(
                 modifier = Modifier.fillMaxSize(),
                 question = TestQuestion(
-                    resId = R.raw.alphabet_e,
-                    text = "¿Que letra escuchas?",
+                    resId = R.drawable.gato,
+                    text = "¿Que animal es?",
                     options = listOf(
                         TestOption(
-                            id = "a",
+                            id = "gato",
                             optionText = "",
-                            resId = R.drawable.a
+                            resId = R.drawable.gato
                         ),
                         TestOption(
-                            id = "e",
+                            id = "perro",
                             optionText = "",
-                            resId = R.drawable.e
+                            resId = R.drawable.perro
                         ),
                         TestOption(
-                            id = "i",
+                            id = "pajaro",
                             optionText = "",
-                            resId = R.drawable.i
+                            resId = R.drawable.pajaro
                         )
                     ),
-                    questionType = QuestionType.Sound
+                    questionType = QuestionType.Image
                 ),
                 onAnswer = {},
                 onContinue = {}
@@ -140,3 +132,4 @@ private fun SoundQuestionPreview() {
         }
     }
 }
+

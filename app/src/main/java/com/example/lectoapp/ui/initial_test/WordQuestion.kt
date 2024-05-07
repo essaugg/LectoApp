@@ -23,14 +23,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.lectoapp.R
 
-
 @Composable
-fun ImageQuestion(
+fun WordQuestion(
     modifier: Modifier = Modifier,
     question: TestQuestion,
     onAnswer: (TestOption) -> Unit,
     onContinue:() -> Unit
-){
+) {
     val grayScaleMatrix = ColorMatrix(
         floatArrayOf(
             0.33f, 0.33f, 0.33f, 0f, 0f,
@@ -72,7 +71,7 @@ fun ImageQuestion(
                 Image(
                     modifier = Modifier
                         .size(120.dp),
-                    painter = painterResource(id = R.drawable.img_tres),
+                    painter = painterResource(id = R.drawable.pelota),
                     contentDescription = "",
                 )
 
@@ -100,29 +99,29 @@ fun ImageQuestion(
 
 @Preview
 @Composable
-private fun ImageQuestionPreview() {
+private fun WordQuestionPreview() {
     MaterialTheme {
         Surface {
-            ImageQuestion(
+            WordQuestion(
                 modifier = Modifier.fillMaxSize(),
                 question = TestQuestion(
-                    resId = R.drawable.tres,
-                    text = "¿Que palabra corresponde con la imagen?",
+                    resId = R.drawable.img_o,
+                    text = "¿Que letra completa la palabra?",
                     options = listOf(
                         TestOption(
-                            id = "cuatro",
+                            id = "o",
                             optionText = "",
-                            resId = R.drawable.cuatro
+                            resId = R.drawable.img_o
                         ),
                         TestOption(
-                            id = "tres",
+                            id = "a",
                             optionText = "",
-                            resId = R.drawable.tres
+                            resId = R.drawable.img_a
                         ),
                         TestOption(
-                            id = "dos",
+                            id = "i",
                             optionText = "",
-                            resId = R.drawable.dos
+                            resId = R.drawable.img_i
                         )
                     ),
                     questionType = QuestionType.Image
@@ -133,3 +132,4 @@ private fun ImageQuestionPreview() {
         }
     }
 }
+

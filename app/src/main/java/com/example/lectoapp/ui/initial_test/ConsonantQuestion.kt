@@ -9,6 +9,8 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.Button
+import androidx.compose.material.Icon
+import androidx.compose.material.IconButton
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Surface
@@ -23,14 +25,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.lectoapp.R
 
-
 @Composable
-fun ImageQuestion(
+fun ConsonantQuestion(
     modifier: Modifier = Modifier,
     question: TestQuestion,
     onAnswer: (TestOption) -> Unit,
     onContinue:() -> Unit
-){
+) {
     val grayScaleMatrix = ColorMatrix(
         floatArrayOf(
             0.33f, 0.33f, 0.33f, 0f, 0f,
@@ -69,11 +70,16 @@ fun ImageQuestion(
             ) {
                 Spacer(modifier = Modifier.height(16.dp))
 
-                Image(
-                    modifier = Modifier
-                        .size(120.dp),
-                    painter = painterResource(id = R.drawable.img_tres),
-                    contentDescription = "",
+                IconButton(
+                    onClick = {
+
+                    },
+                    content = {
+                        Icon(
+                            painter = painterResource(id = R.drawable.ic_speaker),
+                            contentDescription = ""
+                        )
+                    }
                 )
 
                 Spacer(modifier = Modifier.height(32.dp))
@@ -100,32 +106,32 @@ fun ImageQuestion(
 
 @Preview
 @Composable
-private fun ImageQuestionPreview() {
+private fun ConsonantQuestionPreview() {
     MaterialTheme {
         Surface {
-            ImageQuestion(
+            ConsonantQuestion(
                 modifier = Modifier.fillMaxSize(),
                 question = TestQuestion(
-                    resId = R.drawable.tres,
-                    text = "¿Que palabra corresponde con la imagen?",
+                    resId = R.raw.alphabet_e,//consonant l
+                    text = "¿Que letra escuchas?",
                     options = listOf(
                         TestOption(
-                            id = "cuatro",
+                            id = "l",
                             optionText = "",
-                            resId = R.drawable.cuatro
+                            resId = R.drawable.l
                         ),
                         TestOption(
-                            id = "tres",
+                            id = "r",
                             optionText = "",
-                            resId = R.drawable.tres
+                            resId = R.drawable.r
                         ),
                         TestOption(
-                            id = "dos",
+                            id = "t",
                             optionText = "",
-                            resId = R.drawable.dos
+                            resId = R.drawable.t
                         )
                     ),
-                    questionType = QuestionType.Image
+                    questionType = QuestionType.Sound
                 ),
                 onAnswer = {},
                 onContinue = {}
@@ -133,3 +139,4 @@ private fun ImageQuestionPreview() {
         }
     }
 }
+
