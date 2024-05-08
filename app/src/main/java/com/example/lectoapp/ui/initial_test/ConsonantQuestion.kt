@@ -25,14 +25,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.lectoapp.R
 
-
 @Composable
-fun ImagesQuestion(
+fun ConsonantQuestion(
     modifier: Modifier = Modifier,
     question: TestQuestion,
     onAnswer: (TestOption) -> Unit,
     onContinue:() -> Unit
-){
+) {
     val grayScaleMatrix = ColorMatrix(
         floatArrayOf(
             0.33f, 0.33f, 0.33f, 0f, 0f,
@@ -69,26 +68,28 @@ fun ImagesQuestion(
                     .padding(it),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                Spacer(modifier = Modifier.height(16.dp))
+                Spacer(modifier = Modifier.height(20.dp))
 
-                /**IconButton(
+                IconButton(
                     onClick = {
 
                     },
                     content = {
                         Icon(
+                            modifier = Modifier
+                                .size(100.dp),
                             painter = painterResource(id = R.drawable.ic_speaker),
                             contentDescription = ""
                         )
                     }
-                ) PROYECTO ACTUALIZADOO**/
+                )
 
-                Spacer(modifier = Modifier.height(32.dp))
+                Spacer(modifier = Modifier.height(40.dp))
 
                 question.options.forEach { option ->
                     Image(
                         modifier = Modifier
-                            .size(120.dp)
+                            .size(130.dp)
                             .clickable {
                                 onAnswer(option)
                             },
@@ -97,7 +98,7 @@ fun ImagesQuestion(
                         colorFilter = if (option.id == question.answer?.id) null
                         else ColorFilter.colorMatrix(grayScaleMatrix)
                     )
-                    Spacer(modifier = Modifier.height(32.dp))
+                    Spacer(modifier = Modifier.height(40.dp))
                 }
             }
         }
@@ -107,29 +108,29 @@ fun ImagesQuestion(
 
 @Preview
 @Composable
-private fun SoundQuestionPreview() {
+private fun ConsonantQuestionPreview() {
     MaterialTheme {
         Surface {
-            SoundQuestion(
+            ConsonantQuestion(
                 modifier = Modifier.fillMaxSize(),
                 question = TestQuestion(
-                    resId = R.raw.alphabet_e,
+                    resId = R.raw.alphabet_e,//consonant l
                     text = "¿Que letra escuchas?",
                     options = listOf(
                         TestOption(
-                            id = "a",
+                            id = "l",
                             optionText = "",
-                            resId = R.drawable.a
+                            resId = R.drawable.l
                         ),
                         TestOption(
-                            id = "e",
+                            id = "r",
                             optionText = "",
-                            resId = R.drawable.e
+                            resId = R.drawable.r
                         ),
                         TestOption(
-                            id = "i",
+                            id = "t",
                             optionText = "",
-                            resId = R.drawable.i
+                            resId = R.drawable.t
                         )
                     ),
                     questionType = QuestionType.Sound
@@ -140,3 +141,4 @@ private fun SoundQuestionPreview() {
         }
     }
 }
+

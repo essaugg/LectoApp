@@ -1,6 +1,7 @@
 package com.example.lectoapp.ui.initial_test
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -8,8 +9,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.Button
-import androidx.compose.material.Icon
-import androidx.compose.material.IconButton
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Surface
@@ -24,11 +23,14 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.lectoapp.R
 
+
 @Composable
 fun ImageQuestion(
     modifier: Modifier = Modifier,
-    question: TestQuestion
-) {
+    question: TestQuestion,
+    onAnswer: (TestOption) -> Unit,
+    onContinue:() -> Unit
+){
     val grayScaleMatrix = ColorMatrix(
         floatArrayOf(
             0.33f, 0.33f, 0.33f, 0f, 0f,
@@ -49,47 +51,52 @@ fun ImageQuestion(
         },
         bottomBar = {
             if (question.answer != null) {
-                Button(onClick = { /*TODO*/ }) {
+                Button(
+                    onClick = {
+                        onContinue()
+                    }
+                ) {
                     Text(text = "Siguiente")
                 }
             }
-        }
-    ) {
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(it),
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            Spacer(modifier = Modifier.height(16.dp))
+        },
+        content = {
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(it),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Spacer(modifier = Modifier.height(20.dp))
 
-            IconButton(
-                onClick = {
-
-                },
-                content = {
-                    Image(
-                        modifier = Modifier.size(108.dp),
-                        painter = painterResource(id = question.resId),
-                        contentDescription = ""
-                    )
-                }
-            )
-
-            Spacer(modifier = Modifier.height(32.dp))
-
-            question.options.forEach { option ->
                 Image(
-                    modifier = Modifier.size(120.dp),
-                    painter = painterResource(id = option.resId),
+                    modifier = Modifier
+                        .size(145.dp),
+                    painter = painterResource(id = question.resId),
                     contentDescription = "",
-                    colorFilter = if (option.id == question.answer?.id) null
-                    else ColorFilter.colorMatrix(grayScaleMatrix)
+
                 )
-                Spacer(modifier = Modifier.height(32.dp))
+
+                Spacer(modifier = Modifier.height(40.dp))
+
+                question.options.forEach { option ->
+                    Image(
+                        modifier = Modifier
+                            .size(130.dp)
+                            .clickable {
+                                onAnswer(option)
+                            },
+                        painter = painterResource(id = option.resId),
+                        contentDescription = "",
+                        colorFilter = if (option.id == question.answer?.id) null
+                        else ColorFilter.colorMatrix(grayScaleMatrix)
+                    )
+                    Spacer(modifier = Modifier.height(40.dp))
+                }
             }
         }
-    }
+    )
+
 }
 
 @Preview
@@ -100,27 +107,29 @@ private fun ImageQuestionPreview() {
             ImageQuestion(
                 modifier = Modifier.fillMaxSize(),
                 question = TestQuestion(
-                    resId = R.drawable.a,
-                    text = "¿Que letra(numero) es este?",
+                    resId = R.drawable.img_tres,
+                    text = "¿Que palabra corresponde con la imagen?",
                     options = listOf(
                         TestOption(
-                            id = "a",
+                            id = "cuatro",
                             optionText = "",
-                            resId = R.drawable.a
+                            resId = R.drawable.cuatro
                         ),
                         TestOption(
-                            id = "e",
+                            id = "tres",
                             optionText = "",
-                            resId = R.drawable.e
+                            resId = R.drawable.tres
                         ),
                         TestOption(
-                            id = "i",
+                            id = "dos",
                             optionText = "",
-                            resId = R.drawable.i
+                            resId = R.drawable.dos
                         )
                     ),
                     questionType = QuestionType.Image
-                )
+                ),
+                onAnswer = {},
+                onContinue = {}
             )
         }
     }

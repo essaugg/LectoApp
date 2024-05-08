@@ -2,10 +2,19 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-      <entry key="TestPreview">
+      <entry key="AnimalQuestionPreview">
         <State />
       </entry>
-      <entry key="TextPreview">
+      <entry key="ImageQuestionPreview">
+        <State />
+      </entry>
+      <entry key="ImagesQuestionPreview">
+        <State />
+      </entry>
+      <entry key="NumbersQuestionPreview">
+        <State />
+      </entry>
+      <entry key="SoundQuestionPreview">
         <State />
       </entry>
       <entry key="app">

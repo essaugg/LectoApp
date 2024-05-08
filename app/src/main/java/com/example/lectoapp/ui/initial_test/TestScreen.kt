@@ -1,5 +1,6 @@
 package com.example.lectoapp.ui.initial_test
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
@@ -16,17 +17,25 @@ fun TestScreen(
 ) {
     val currentQuestion = questions[currentQuestionIndex]
     when(currentQuestion.questionType) {
+
         QuestionType.Sound -> {
             SoundQuestion(
                 question = currentQuestion,
                 onAnswer = onAnswer,
                 onContinue = onContinue
             )
+
         }
 
         QuestionType.Image -> {
+            ImageQuestion(
+                question = currentQuestion,
+                onAnswer = onAnswer,
+                onContinue = onContinue
+            )
 
         }
+
     }
 }
 
