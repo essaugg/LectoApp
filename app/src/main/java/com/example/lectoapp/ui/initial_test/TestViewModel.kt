@@ -33,13 +33,13 @@ private val dummyQuestions = listOf(
         questionType = QuestionType.Sound
     ),
     TestQuestion(
-        resId = R.raw.alphabet_e,
+        resId = R.raw.alphabet_u,
         text = "Pregunta sonido",
         options = listOf(
             TestOption(
-                id = "e",
-                optionText = "e",
-                resId = R.drawable.e
+                id = "i",
+                optionText = "i",
+                resId = R.drawable.i
             ),
             TestOption(
                 id = "a",
@@ -47,13 +47,14 @@ private val dummyQuestions = listOf(
                 resId = R.drawable.a
             ),
             TestOption(
-                id = "i",
-                optionText = "i",
-                resId = R.drawable.i
-            )
+                id = "e",
+                optionText = "e",
+                resId = R.drawable.e
+            ),
         ),
         questionType = QuestionType.Sound
     ),
+
     //Consonant questions
     TestQuestion(
         resId = R.raw.alphabet_e,
@@ -82,74 +83,49 @@ private val dummyQuestions = listOf(
         text = "Pregunta sonido",
         options = listOf(
             TestOption(
-                id = "l",
-                optionText = "l",
-                resId = R.drawable.l
+                id = "g",
+                optionText = "g",
+                resId = R.drawable.g
             ),
             TestOption(
-                id = "r",
-                optionText = "r",
-                resId = R.drawable.r
+                id = "d",
+                optionText = "d",
+                resId = R.drawable.d
             ),
             TestOption(
-                id = "t",
-                optionText = "t",
-                resId = R.drawable.t
+                id = "c",
+                optionText = "c",
+                resId = R.drawable.c
             )
         ),
         questionType = QuestionType.Sound
     ),
 
-    //Animal question
-    TestQuestion(
-        resId = R.drawable.gato,
-        text = "Pregunta imagen",
-        options = listOf(
-            TestOption(
-                id = "gato",
-                optionText = "gato",
-                resId = R.drawable.gato
-            ),
-            TestOption(
-                id = "perro",
-                optionText = "perro",
-                resId = R.drawable.perro
-            ),
-            TestOption(
-                id = "pajaro",
-                optionText = "pajaro",
-                resId = R.drawable.pajaro
-            )
-        ),
-        questionType = QuestionType.Image
-    ),
-    TestQuestion(
-        resId = R.drawable.gato,
-        text = "Pregunta imagen",
-        options = listOf(
-            TestOption(
-                id = "gato",
-                optionText = "gato",
-                resId = R.drawable.gato
-            ),
-            TestOption(
-                id = "perro",
-                optionText = "perro",
-                resId = R.drawable.perro
-            ),
-            TestOption(
-                id = "pajaro",
-                optionText = "pajaro",
-                resId = R.drawable.pajaro
-            )
-        ),
-        questionType = QuestionType.Image
-    ),
-
-
     //Number questions
     TestQuestion(
-        resId = R.drawable.tres,
+        resId = R.drawable.img_tres,
+        text = "Pregunta imagen",
+        options = listOf(
+            TestOption(
+                id = "dos",
+                optionText = "dos",
+                resId = R.drawable.dos
+            ),
+            TestOption(
+                id = "tres",
+                optionText = "tres",
+                resId = R.drawable.tres
+            ),
+            TestOption(
+                id = "cuatro",
+                optionText = "cuatro",
+                resId = R.drawable.cuatro
+            )
+        ),
+        questionType = QuestionType.Image
+    ),
+    TestQuestion(
+        resId = R.drawable.img_cuatro,
         text = "Pregunta imagen",
         options = listOf(
             TestOption(
@@ -170,32 +146,56 @@ private val dummyQuestions = listOf(
         ),
         questionType = QuestionType.Image
     ),
+
+    //Animal question
     TestQuestion(
-        resId = R.drawable.tres,
+        resId = R.drawable.img_gato,
         text = "Pregunta imagen",
         options = listOf(
             TestOption(
-                id = "cuatro",
-                optionText = "cuatro",
-                resId = R.drawable.cuatro
+                id = "gato",
+                optionText = "gato",
+                resId = R.drawable.gato
             ),
             TestOption(
-                id = "tres",
-                optionText = "tres",
-                resId = R.drawable.tres
+                id = "perro",
+                optionText = "perro",
+                resId = R.drawable.perro
             ),
             TestOption(
-                id = "dos",
-                optionText = "dos",
-                resId = R.drawable.dos
+                id = "pajaro",
+                optionText = "pajaro",
+                resId = R.drawable.pajaro
             )
+        ),
+        questionType = QuestionType.Image
+    ),
+    TestQuestion(
+        resId = R.drawable.img_pajaro,
+        text = "Pregunta imagen",
+        options = listOf(
+            TestOption(
+                id = "pajaro",
+                optionText = "pajaro",
+                resId = R.drawable.pajaro
+            ),
+            TestOption(
+                id = "gato",
+                optionText = "gato",
+                resId = R.drawable.gato
+            ),
+            TestOption(
+                id = "perro",
+                optionText = "perro",
+                resId = R.drawable.perro
+            ),
         ),
         questionType = QuestionType.Image
     ),
 
     //Word questions
     TestQuestion(
-        resId = R.drawable.img_o,
+        resId = R.drawable.pelota,
         text = "Pregunta imagen",
         options = listOf(
             TestOption(
@@ -217,7 +217,7 @@ private val dummyQuestions = listOf(
         questionType = QuestionType.Image
     ),
     TestQuestion(
-        resId = R.drawable.img_o,
+        resId = R.drawable.abeja,
         text = "Pregunta imagen",
         options = listOf(
             TestOption(
@@ -238,6 +238,7 @@ private val dummyQuestions = listOf(
         ),
         questionType = QuestionType.Image
     ),
+
 
     )
 

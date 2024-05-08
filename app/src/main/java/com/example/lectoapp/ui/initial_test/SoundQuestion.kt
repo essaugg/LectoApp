@@ -68,7 +68,7 @@ fun SoundQuestion(
                     .padding(it),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                Spacer(modifier = Modifier.height(16.dp))
+                Spacer(modifier = Modifier.height(20.dp))
 
                 IconButton(
                     onClick = {
@@ -76,18 +76,20 @@ fun SoundQuestion(
                     },
                     content = {
                         Icon(
+                            modifier = Modifier
+                                .size(100.dp),
                             painter = painterResource(id = R.drawable.ic_speaker),
                             contentDescription = ""
                         )
                     }
                 )
 
-                Spacer(modifier = Modifier.height(32.dp))
+                Spacer(modifier = Modifier.height(40.dp))
 
                 question.options.forEach { option ->
                     Image(
                         modifier = Modifier
-                            .size(120.dp)
+                            .size(130.dp)
                             .clickable {
                                 onAnswer(option)
                             },
@@ -96,7 +98,7 @@ fun SoundQuestion(
                         colorFilter = if (option.id == question.answer?.id) null
                         else ColorFilter.colorMatrix(grayScaleMatrix)
                     )
-                    Spacer(modifier = Modifier.height(32.dp))
+                    Spacer(modifier = Modifier.height(40.dp))
                 }
             }
         }

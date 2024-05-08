@@ -66,21 +66,21 @@ fun AnimalQuestion(
                     .padding(it),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                Spacer(modifier = Modifier.height(16.dp))
+                Spacer(modifier = Modifier.height(20.dp))
 
                 Image(
                     modifier = Modifier
-                        .size(120.dp),
-                    painter = painterResource(id = R.drawable.img_gato),
+                        .size(145.dp),
+                    painter = painterResource(id = question.resId),
                     contentDescription = "",
                 )
 
-                Spacer(modifier = Modifier.height(32.dp))
+                Spacer(modifier = Modifier.height(40.dp))
 
                 question.options.forEach { option ->
                     Image(
                         modifier = Modifier
-                            .size(120.dp)
+                            .size(130.dp)
                             .clickable {
                                 onAnswer(option)
                             },
@@ -89,7 +89,7 @@ fun AnimalQuestion(
                         colorFilter = if (option.id == question.answer?.id) null
                         else ColorFilter.colorMatrix(grayScaleMatrix)
                     )
-                    Spacer(modifier = Modifier.height(32.dp))
+                    Spacer(modifier = Modifier.height(40.dp))
                 }
             }
         }
@@ -105,7 +105,7 @@ private fun AnimalQuestionPreview() {
             AnimalQuestion(
                 modifier = Modifier.fillMaxSize(),
                 question = TestQuestion(
-                    resId = R.drawable.gato,
+                    resId = R.drawable.img_gato,
                     text = "¿Que animal es?",
                     options = listOf(
                         TestOption(

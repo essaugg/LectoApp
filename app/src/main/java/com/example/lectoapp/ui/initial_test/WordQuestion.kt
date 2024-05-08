@@ -66,16 +66,16 @@ fun WordQuestion(
                     .padding(it),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                Spacer(modifier = Modifier.height(16.dp))
+                Spacer(modifier = Modifier.height(20.dp))
 
                 Image(
                     modifier = Modifier
-                        .size(120.dp),
-                    painter = painterResource(id = R.drawable.pelota),
+                        .size(145.dp),
+                    painter = painterResource(id = question.resId),
                     contentDescription = "",
                 )
 
-                Spacer(modifier = Modifier.height(32.dp))
+                Spacer(modifier = Modifier.height(40.dp))
 
                 question.options.forEach { option ->
                     Image(
@@ -89,7 +89,7 @@ fun WordQuestion(
                         colorFilter = if (option.id == question.answer?.id) null
                         else ColorFilter.colorMatrix(grayScaleMatrix)
                     )
-                    Spacer(modifier = Modifier.height(32.dp))
+                    Spacer(modifier = Modifier.height(40.dp))
                 }
             }
         }
@@ -105,7 +105,7 @@ private fun WordQuestionPreview() {
             WordQuestion(
                 modifier = Modifier.fillMaxSize(),
                 question = TestQuestion(
-                    resId = R.drawable.img_o,
+                    resId = R.drawable.pelota,
                     text = "¿Que letra completa la palabra?",
                     options = listOf(
                         TestOption(
