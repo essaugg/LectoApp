@@ -8,13 +8,13 @@
       <entry key="ImageQuestionPreview">
         <State />
       </entry>
-      <entry key="ImagesQuestionPreview">
-        <State />
-      </entry>
-      <entry key="NumbersQuestionPreview">
+      <entry key="ProgressBar">
         <State />
       </entry>
       <entry key="SoundQuestionPreview">
+        <State />
+      </entry>
+      <entry key="SoundQuestionPreview (1)">
         <State />
       </entry>
       <entry key="app">
