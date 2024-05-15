@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/logInFragment"
-        android:name="com.example.lectoapp.ui.login.LogInFragment"
+        android:name="com.example.lectoapp.presentation.login.LogInFragment"
         android:label="fragment_log_in"
         tools:layout="@layout/fragment_log_in" >
         <action
@@ -23,7 +23,7 @@
 
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.example.lectoapp.ui.signup.SignUpFragment"
+        android:name="com.example.lectoapp.presentation.signup.SignUpFragment"
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up" >
         <action
@@ -35,7 +35,7 @@
     </fragment>
     <fragment
         android:id="@+id/forgotPasswordFragment"
-        android:name="com.example.lectoapp.ui.forgotpassword.ForgotPasswordFragment"
+        android:name="com.example.lectoapp.presentation.forgotpassword.ForgotPasswordFragment"
         android:label="ForgotPasswordFragment" >
         <action
             android:id="@+id/action_forgotPasswordFragment_to_logInFragment"
@@ -46,7 +46,7 @@
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.lectoapp.ui.home.HomeFragment"
+        android:name="com.example.lectoapp.presentation.home.HomeFragment"
         android:label="HomeFragment" >
         <action
             android:id="@+id/action_homeFragment_to_memoryGameFragment"
@@ -60,14 +60,14 @@
     </fragment>
     <fragment
         android:id="@+id/initialQuestionFragment"
-        android:name="com.example.lectoapp.ui.initial_test.InitialTestFragment"
+        android:name="com.example.lectoapp.presentation.test.InitialTestFragment"
         android:label="InitialQuestionFragment" />
     <fragment
         android:id="@+id/memoryGameFragment"
-        android:name="com.example.lectoapp.ui.memory.MemoryGameFragment"
+        android:name="com.example.lectoapp.presentation.memory.MemoryGameFragment"
         android:label="MemoryGameFragment" />
     <fragment
         android:id="@+id/testFragment"
-        android:name="com.example.lectoapp.ui.initial_test.TestFragment"
+        android:name="com.example.lectoapp.presentation.test.TestFragment"
         android:label="TestFragment" />
 </navigation>

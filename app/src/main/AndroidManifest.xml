@@ -14,7 +14,7 @@
         android:theme="@style/Theme.LectoApp"
         tools:targetApi="31">
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".presentation.MainActivity"
             android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>

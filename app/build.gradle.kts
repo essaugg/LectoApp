@@ -64,6 +64,7 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     implementation(libs.dagger.hilt)
+    debugImplementation(libs.ui.tooling)
     ksp(libs.dagger.hilt.compiler)
 
     implementation(libs.androidx.coroutines)
@@ -81,11 +82,10 @@ dependencies {
     implementation(libs.retrofit.converter.moshi)
 
     // Compose
-    implementation(libs.androidx.compose.material)
-    implementation(libs.androidx.compose.compiler)
-    implementation(libs.androidx.compose.ui.activity)
-    implementation(libs.androidx.compose.ui.preview)
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.ui)
+    implementation(libs.androidx.ui.graphics)
+    implementation(libs.androidx.ui.tooling.preview)
+    implementation(libs.androidx.material3)
     implementation(libs.androidx.lifecycle.lifecycle.runtime.compose)
-    debugImplementation(libs.androidx.compose.ui.tooling)
-
 }
