@@ -2,6 +2,7 @@ package com.example.lectoapp.ui.initial_test
 
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateListOf
+import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import com.example.lectoapp.R
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -12,7 +13,7 @@ private val dummyQuestions = listOf(
     //Vowel questions
     TestQuestion(
         resId = R.raw.alphabet_e,
-        text = "Pregunta sonido",
+        text = "Vocales",
         options = listOf(
             TestOption(
                 id = "e",
@@ -34,7 +35,7 @@ private val dummyQuestions = listOf(
     ),
     TestQuestion(
         resId = R.raw.alphabet_u,
-        text = "Pregunta sonido",
+        text = "Vocales",
         options = listOf(
             TestOption(
                 id = "i",
@@ -58,7 +59,7 @@ private val dummyQuestions = listOf(
     //Consonant questions
     TestQuestion(
         resId = R.raw.alphabet_e,
-        text = "Pregunta sonido",
+        text = "Consonantes",
         options = listOf(
             TestOption(
                 id = "l",
@@ -80,7 +81,7 @@ private val dummyQuestions = listOf(
     ),
     TestQuestion(
         resId = R.raw.alphabet_e,
-        text = "Pregunta sonido",
+        text = "Consonantes",
         options = listOf(
             TestOption(
                 id = "g",
@@ -104,7 +105,7 @@ private val dummyQuestions = listOf(
     //Number questions
     TestQuestion(
         resId = R.drawable.img_tres,
-        text = "Pregunta imagen",
+        text = "Numeros",
         options = listOf(
             TestOption(
                 id = "dos",
@@ -126,7 +127,7 @@ private val dummyQuestions = listOf(
     ),
     TestQuestion(
         resId = R.drawable.img_cuatro,
-        text = "Pregunta imagen",
+        text = "Numeros",
         options = listOf(
             TestOption(
                 id = "cuatro",
@@ -150,7 +151,7 @@ private val dummyQuestions = listOf(
     //Animal question
     TestQuestion(
         resId = R.drawable.img_gato,
-        text = "Pregunta imagen",
+        text = "Animales",
         options = listOf(
             TestOption(
                 id = "gato",
@@ -172,7 +173,7 @@ private val dummyQuestions = listOf(
     ),
     TestQuestion(
         resId = R.drawable.img_pajaro,
-        text = "Pregunta imagen",
+        text = "Animales",
         options = listOf(
             TestOption(
                 id = "pajaro",
@@ -196,7 +197,7 @@ private val dummyQuestions = listOf(
     //Word questions
     TestQuestion(
         resId = R.drawable.pelota,
-        text = "Pregunta imagen",
+        text = "Completa la palabra",
         options = listOf(
             TestOption(
                 id = "o2",
@@ -218,7 +219,7 @@ private val dummyQuestions = listOf(
     ),
     TestQuestion(
         resId = R.drawable.abeja,
-        text = "Pregunta imagen",
+        text = "Completa la palabra",
         options = listOf(
             TestOption(
                 id = "o2",
@@ -265,6 +266,20 @@ class TestViewModel @Inject constructor(
             currentQuestionIndex.intValue += 1
         }
     }
+
+    //Progress Bar
+    class ProgressBarViewModel : ViewModel() {
+        val maxProgress = 11 // Número máximo de clics permitidos
+        val progressCount = mutableStateOf(1)
+
+        fun incrementProgress() {
+            if (progressCount.value < maxProgress) {
+                progressCount.value += 1
+            }
+        }
+    }
+
+
 }
 
 data class TestUiState (

@@ -12,8 +12,11 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class TestFragment : Fragment() {
+
     private lateinit var composeView: ComposeView
     private val viewModel : TestViewModel by viewModels()
+
+
 
     override fun onCreateView(
 
