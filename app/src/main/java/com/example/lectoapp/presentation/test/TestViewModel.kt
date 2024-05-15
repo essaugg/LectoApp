@@ -246,8 +246,6 @@ private val dummyQuestions = listOf(
 
     )
 
-
-
 @HiltViewModel
 class TestViewModel @Inject constructor(
 
@@ -269,20 +267,6 @@ class TestViewModel @Inject constructor(
             currentQuestionIndex.intValue += 1
         }
     }
-
-    //Progress Bar
-    class ProgressBarViewModel : ViewModel() {
-        val maxProgress = 11 // Número máximo de clics permitidos
-        val progressCount = mutableStateOf(1)
-
-        fun incrementProgress() {
-            if (progressCount.value < maxProgress) {
-                progressCount.value += 1
-            }
-        }
-    }
-
-
 }
 
 data class TestUiState (

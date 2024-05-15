@@ -24,9 +24,7 @@ import androidx.compose.ui.graphics.ColorMatrix
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.lectoapp.R
-import com.example.lectoapp.presentation.test.TestViewModel
 
 @Composable
 fun WordQuestion(
@@ -35,9 +33,6 @@ fun WordQuestion(
     onAnswer: (TestOption) -> Unit,
     onContinue:() -> Unit
 ) {
-    //ProgressBar
-    val viewModel: TestViewModel.ProgressBarViewModel = viewModel()
-
     val grayScaleMatrix = ColorMatrix(
         floatArrayOf(
             0.33f, 0.33f, 0.33f, 0f, 0f,
@@ -75,7 +70,6 @@ fun WordQuestion(
                 Button(
                     onClick = {
                         onContinue()
-                        viewModel.incrementProgress()
                     }
                 ) {
                     Text(text = "Siguiente")

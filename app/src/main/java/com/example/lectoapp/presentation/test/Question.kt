@@ -30,7 +30,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.lectoapp.R
 import com.example.lectoapp.presentation.test.questions.QuestionType
 import com.example.lectoapp.presentation.test.questions.TestOption
@@ -44,7 +43,6 @@ fun Question(
     onContinue:() -> Unit
 ) {
 
-    val viewModel: TestViewModel.ProgressBarViewModel = viewModel()
     val grayScaleMatrix = ColorMatrix(
         floatArrayOf(
             0.33f, 0.33f, 0.33f, 0f, 0f,
@@ -81,7 +79,6 @@ fun Question(
                 Button(
                     onClick = {
                         onContinue()
-                        viewModel.incrementProgress()
                     },
                     modifier = Modifier
                         .padding(start = 10.dp, end = 10.dp, bottom = 10.dp)
