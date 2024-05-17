@@ -54,7 +54,7 @@ fun MemoryGameCard(
                 scaleX = if (memoryCard.isFaceUp) -1f else 1f
                 rotationY = animatedRotationY
             },
-        painter = painterResource(id = if (memoryCard.isFaceUp) memoryCard.drawResId else R.drawable.ic_launcher_background),
+        painter = painterResource(id = if (memoryCard.isFaceUp) memoryCard.drawResId else R.drawable.fondo),
         contentDescription = "",
         contentScale = ContentScale.Fit
     )
@@ -85,9 +85,11 @@ private fun MemoryGameCardPreview(
 ) {
     MaterialTheme {
         Surface {
+
             MemoryGameCard(
                 memoryCard = memoryCard,
                 onTap = {}
+
             )
         }
     }

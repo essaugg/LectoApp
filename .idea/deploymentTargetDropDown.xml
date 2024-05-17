@@ -2,13 +2,10 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-      <entry key="ImageQuestionPreview">
+      <entry key="MemoryGameCardPreview">
         <State />
       </entry>
       <entry key="ProgressBarPreview">
-        <State />
-      </entry>
-      <entry key="SoundQuestionPreview">
         <State />
       </entry>
       <entry key="app">
