@@ -47,6 +47,7 @@ fun MemoryGameCard(
 
     Image(
         modifier = modifier
+
             .size(64.dp)
             .clickable { onTap(memoryCard) }
             .graphicsLayer {
@@ -57,6 +58,7 @@ fun MemoryGameCard(
         painter = painterResource(id = if (memoryCard.isFaceUp) memoryCard.drawResId else R.drawable.fondo),
         contentDescription = "",
         contentScale = ContentScale.Fit
+
     )
 }
 
@@ -68,6 +70,7 @@ class MemoryGameCardPreviewParamProvider : PreviewParameterProvider<MemoryCard> 
                 drawResId = R.drawable.a,
                 isFaceUp = false,
                 isMatched = false
+
             ),
             MemoryCard(
                 pairId = "2",
@@ -89,6 +92,7 @@ private fun MemoryGameCardPreview(
             MemoryGameCard(
                 memoryCard = memoryCard,
                 onTap = {}
+
 
             )
         }
