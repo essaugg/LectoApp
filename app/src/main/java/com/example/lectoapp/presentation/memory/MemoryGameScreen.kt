@@ -1,5 +1,6 @@
 package com.example.lectoapp.presentation.memory
 
+import MemoryGameCard
 import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

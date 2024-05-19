@@ -64,7 +64,7 @@ fun HomeScreen(
             text = "Memorama",
             resId = R.drawable.menu_image_memory,
             onClick = {
-
+                onMemoryGameClick()
             }
         )
     }

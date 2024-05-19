@@ -1,12 +1,12 @@
-package com.example.lectoapp.presentation.memory
-
+import androidx.compose.animation.core.*
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -14,6 +14,7 @@ import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.unit.dp
 import com.example.lectoapp.R
+import com.example.lectoapp.presentation.memory.MemoryCard
 
 @Composable
 fun MemoryGameCard(
@@ -21,16 +22,47 @@ fun MemoryGameCard(
     memoryCard: MemoryCard,
     onTap: (MemoryCard) -> Unit
 ) {
+    val transition = updateTransition(targetState = memoryCard.isFaceUp)
+
+    val animatedRotationY by transition.animateFloat(
+        transitionSpec = {
+            if (memoryCard.isFaceUp) {
+                keyframes {
+                    durationMillis = 500 //tiempo
+                    0f at 0
+                    180f at 150
+                }
+            } else {
+                keyframes {
+                    durationMillis = 500 //tiempo
+                    180f at 0
+                    0f at 150
+                }
+            }
+        },
+        label = "rotationYAnimation"
+    ) { state ->
+        if (state) 180f else 0f
+    }
+
     Image(
         modifier = modifier
-            .clickable { onTap(memoryCard) },
-        painter =  painterResource(id = if (memoryCard.isFaceUp) memoryCard.drawResId else R.drawable.ic_launcher_background),
+
+            .size(64.dp)
+            .clickable { onTap(memoryCard) }
+            .graphicsLayer {
+                // Voltear imagen
+                scaleX = if (memoryCard.isFaceUp) -1f else 1f
+                rotationY = animatedRotationY
+            },
+        painter = painterResource(id = if (memoryCard.isFaceUp) memoryCard.drawResId else R.drawable.fondo),
         contentDescription = "",
         contentScale = ContentScale.Fit
+
     )
 }
 
-class MemoryGameCardPreviewParamProvider: PreviewParameterProvider<MemoryCard> {
+class MemoryGameCardPreviewParamProvider : PreviewParameterProvider<MemoryCard> {
     override val values: Sequence<MemoryCard>
         get() = sequenceOf(
             MemoryCard(
@@ -38,6 +70,7 @@ class MemoryGameCardPreviewParamProvider: PreviewParameterProvider<MemoryCard> {
                 drawResId = R.drawable.a,
                 isFaceUp = false,
                 isMatched = false
+
             ),
             MemoryCard(
                 pairId = "2",
@@ -55,11 +88,15 @@ private fun MemoryGameCardPreview(
 ) {
     MaterialTheme {
         Surface {
+
             MemoryGameCard(
-                modifier = Modifier.size(64.dp),
                 memoryCard = memoryCard,
                 onTap = {}
+
+
             )
         }
     }
 }
+
+
