@@ -19,6 +19,11 @@ const val PREFERENCES_NAME = "lecto_app_preferences"
 
 val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = PREFERENCES_NAME)
 
+/**
+ * DataStore manager to handle local data storage
+ * Actual use: Store user session credentials or token
+ */
+
 class DataStorePreferences @Inject constructor(
     @ApplicationContext context: Context
 ) {

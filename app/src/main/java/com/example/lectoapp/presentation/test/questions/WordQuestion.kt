@@ -2,6 +2,7 @@ package com.example.lectoapp.presentation.test.questions
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -17,6 +18,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ColorFilter
@@ -33,6 +35,8 @@ fun WordQuestion(
     onAnswer: (TestOption) -> Unit,
     onContinue:() -> Unit
 ) {
+    val interactionSource = remember { MutableInteractionSource() }
+
     val grayScaleMatrix = ColorMatrix(
         floatArrayOf(
             0.33f, 0.33f, 0.33f, 0f, 0f,
@@ -52,7 +56,7 @@ fun WordQuestion(
             ) {
                 IconButton(
                     onClick = {
-
+                        // No op
                     },
                     content = {
                         Icon(
@@ -100,7 +104,10 @@ fun WordQuestion(
                     Image(
                         modifier = Modifier
                             .size(130.dp)
-                            .clickable {
+                            .clickable(
+                                indication = null,
+                                interactionSource = interactionSource
+                            ) {
                                 onAnswer(option)
                             },
                         painter = painterResource(id = option.resId),

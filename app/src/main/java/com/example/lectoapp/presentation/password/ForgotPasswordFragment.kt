@@ -1,4 +1,4 @@
-package com.example.lectoapp.presentation.forgotpassword
+package com.example.lectoapp.presentation.password
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.example.lectoapp.R
 import com.example.lectoapp.databinding.FragmentForgotPasswordBinding
 
 class ForgotPasswordFragment : Fragment() {
@@ -23,16 +22,9 @@ class ForgotPasswordFragment : Fragment() {
         _binding = FragmentForgotPasswordBinding.inflate(inflater, container, false)
 
         binding.btnBack.setOnClickListener {
-            findNavController().navigate(R.id.action_forgotPasswordFragment_to_logInFragment)
-        }
-
-        binding.txtSignup2.setOnClickListener {
-            findNavController().navigate(R.id.action_forgotPasswordFragment_to_signUpFragment)
+            findNavController().popBackStack()
         }
 
         return binding.root
-
-
-
     }
 }

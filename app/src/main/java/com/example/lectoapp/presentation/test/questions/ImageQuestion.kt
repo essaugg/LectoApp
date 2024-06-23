@@ -2,6 +2,7 @@ package com.example.lectoapp.presentation.test.questions
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -17,6 +18,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -37,6 +39,7 @@ fun ImageQuestion(
     onAnswer: (TestOption) -> Unit,
     onContinue:() -> Unit
 ) {
+    val interactionSource = remember { MutableInteractionSource() }
 
     val grayScaleMatrix = ColorMatrix(
         floatArrayOf(
@@ -48,7 +51,8 @@ fun ImageQuestion(
     )
 
     Scaffold(
-        modifier = modifier,
+        modifier = modifier
+            .padding(top = 0.dp),
         bottomBar = {
             if (question.answer != null ) {
                 Button(
@@ -76,7 +80,7 @@ fun ImageQuestion(
             ) {
                 Text(
                     text = question.text,
-                    fontSize = 30.sp,
+                    fontSize = 24.sp,
                     color = Color.Black,
                     fontWeight = FontWeight.Bold,
                     modifier = Modifier
@@ -93,18 +97,20 @@ fun ImageQuestion(
                         .align(Alignment.Start)
                 )
 
-                Spacer(modifier = Modifier.height(10.dp))
+                Spacer(modifier = Modifier.height(8.dp))
 
                 Image(
                     modifier = Modifier
-                        .size(145.dp),
+                        .size(120.dp),
                     painter = painterResource(id = question.resId),
                     contentDescription = "",
                 )
 
+                Spacer(modifier = Modifier.height(8.dp))
+
                 Text(
                     text = "¿Que respuesta coincide con la imagen?",
-                    fontSize = 20.sp,
+                    fontSize = 16.sp,
                     color = Color.Black,
                     modifier = Modifier
                         .padding(start = 32.dp, end = 32.dp)
@@ -121,8 +127,11 @@ fun ImageQuestion(
                     question.options.take(2).forEach { option ->
                         Image(
                             modifier = Modifier
-                                .size(160.dp)
-                                .clickable {
+                                .size(140.dp)
+                                .clickable(
+                                    indication = null,
+                                    interactionSource = interactionSource
+                                ) {
                                     onAnswer(option)
                                 },
                             painter = painterResource(id = option.resId),
@@ -132,15 +141,17 @@ fun ImageQuestion(
                         )
                     }
                 }
-                //
-                Spacer(modifier = Modifier.height(20.dp))
 
+                Spacer(modifier = Modifier.height(20.dp))
 
                 question.options.getOrNull(2)?.let { option ->
                     Image(
                         modifier = Modifier
-                            .size(160.dp)
-                            .clickable {
+                            .size(140.dp)
+                            .clickable(
+                                indication = null,
+                                interactionSource = interactionSource
+                            ) {
                                 onAnswer(option)
                             },
                         painter = painterResource(id = option.resId),

@@ -2,23 +2,28 @@ package com.example.lectoapp.presentation.test.questions
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -31,6 +36,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.lectoapp.R
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SoundQuestion(
     modifier: Modifier = Modifier,
@@ -38,6 +44,7 @@ fun SoundQuestion(
     onAnswer: (TestOption) -> Unit,
     onContinue:() -> Unit
 ) {
+    val interactionSource = remember { MutableInteractionSource() }
 
     val grayScaleMatrix = ColorMatrix(
         floatArrayOf(
@@ -50,6 +57,24 @@ fun SoundQuestion(
 
     Scaffold(
         modifier = modifier,
+        topBar = {
+                 TopAppBar(
+                     windowInsets = WindowInsets(
+                         top = 0.dp,
+                         bottom = 0.dp
+                     ),
+                     title = {
+                         Text(
+                             text = question.text,
+                             fontSize = 24.sp,
+                             color = Color.Black,
+                             fontWeight = FontWeight.Bold,
+                             modifier = Modifier
+                                 .padding(start = 14.dp)
+                         )
+                     }
+                 )
+        },
         bottomBar = {
             if (question.answer != null ) {
                 Button(
@@ -76,16 +101,6 @@ fun SoundQuestion(
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text(
-                    text = question.text,
-                    fontSize = 30.sp,
-                    color = Color.Black,
-                    fontWeight = FontWeight.Bold,
-                    modifier = Modifier
-                        .padding(start = 32.dp)
-                        .align(Alignment.Start)
-                )
-
-                Text(
                     text = "Selecciona la respuesta correcta",
                     fontSize = 20.sp,
                     color = Color.Black,
@@ -107,8 +122,6 @@ fun SoundQuestion(
                             painter = painterResource(id = R.drawable.ic_speaker),
                             contentDescription = ""
                         )
-
-
                     }
                 )
 
@@ -123,7 +136,6 @@ fun SoundQuestion(
 
                 Spacer(modifier = Modifier.height(40.dp))
 
-
                 Row(
                     modifier = Modifier,
                     horizontalArrangement = Arrangement.spacedBy(8.dp), // Espacio entre las imágenes
@@ -132,8 +144,11 @@ fun SoundQuestion(
                     question.options.take(2).forEach { option ->
                         Image(
                             modifier = Modifier
-                                .size(160.dp)
-                                .clickable {
+                                .size(140.dp)
+                                .clickable(
+                                    indication = null,
+                                    interactionSource = interactionSource
+                                ) {
                                     onAnswer(option)
                                 },
                             painter = painterResource(id = option.resId),
@@ -143,14 +158,17 @@ fun SoundQuestion(
                         )
                     }
                 }
-                //
+
                 Spacer(modifier = Modifier.height(20.dp))
 
                 question.options.getOrNull(2)?.let { option ->
                     Image(
                         modifier = Modifier
-                            .size(160.dp)
-                            .clickable {
+                            .size(140.dp)
+                            .clickable(
+                                indication = null,
+                                interactionSource = interactionSource
+                            ) {
                                 onAnswer(option)
                             },
                         painter = painterResource(id = option.resId),

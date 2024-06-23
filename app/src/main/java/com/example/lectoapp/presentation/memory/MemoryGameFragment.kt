@@ -11,6 +11,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.platform.ComposeView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.lectoapp.presentation.util.ObserveAsEvents
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -64,6 +65,9 @@ class MemoryGameFragment : Fragment() {
                 gameCards = gameCards,
                 onMemoryCardTap = {
                     viewModel.updateGameByFlip(it)
+                },
+                onBackPressed = {
+                    findNavController().popBackStack()
                 }
             )
         }

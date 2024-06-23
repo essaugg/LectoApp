@@ -60,8 +60,9 @@
     <TextView
         android:id="@+id/txtPassword"
         android:layout_width="339dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="8dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:padding="4dp"
         android:gravity="end"
         android:text="@string/string_forgot_password"
         android:textColor="@android:color/darker_gray"
@@ -73,7 +74,7 @@
     <Button
         android:id="@+id/btnLogIn"
         android:layout_width="339dp"
-        android:layout_height="45dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="@string/string_log_in"
         app:layout_constraintEnd_toEndOf="parent"
@@ -99,7 +100,7 @@
             android:textColor="@android:color/darker_gray" />
 
         <TextView
-            android:id="@+id/txtSignup"
+            android:id="@+id/btnSignUp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="6dp"

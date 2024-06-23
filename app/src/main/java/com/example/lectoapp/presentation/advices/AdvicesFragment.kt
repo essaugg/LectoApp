@@ -1,16 +1,14 @@
-package com.example.lectoapp.presentation.home
+package com.example.lectoapp.presentation.advices
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.compose.ui.platform.ComposeView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.example.lectoapp.R
 
-class HomeFragment : Fragment() {
+class AdvicesFragment: Fragment() {
     private lateinit var composeView: ComposeView
 
     override fun onCreateView(
@@ -26,16 +24,9 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         composeView.setContent {
-            HomeScreen(
-                onExercisesClick = {
-                    Log.d("test on click home","on excersices clicked")
-                   findNavController().navigate(R.id.action_homeFragment_to_testFragment)
-                },
-                onAdvicesClick = {
-                    findNavController().navigate(R.id.action_homeFragment_to_advicesFragment)
-                },
-                onMemoryGameClick = {
-                    findNavController().navigate(R.id.action_homeFragment_to_memoryGameFragment)
+            AdvicesScreen(
+                onBackPressed = {
+                    findNavController().popBackStack()
                 }
             )
         }

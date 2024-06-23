@@ -2,7 +2,6 @@ package com.example.lectoapp.presentation.test
 
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateListOf
-import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import com.example.lectoapp.R
 import com.example.lectoapp.presentation.test.questions.QuestionType
@@ -256,6 +255,9 @@ class TestViewModel @Inject constructor(
     )
     val currentQuestionIndex = mutableIntStateOf(0)
 
+    /**
+     * We override past answer with the actual one
+     */
     fun onAnswer(answer: TestOption) {
         questions[currentQuestionIndex.intValue] = questions[currentQuestionIndex.intValue].copy(
             answer = answer
@@ -263,13 +265,8 @@ class TestViewModel @Inject constructor(
     }
 
     fun onContinue() {
-        if(currentQuestionIndex.intValue<=(questions.size-2)){ //preguntas
+        if(currentQuestionIndex.intValue<=(questions.size-2)){
             currentQuestionIndex.intValue += 1
         }
     }
 }
-
-data class TestUiState (
-    val questions: List<TestQuestion>,
-    val currentQuestionIndex: Int
-)
