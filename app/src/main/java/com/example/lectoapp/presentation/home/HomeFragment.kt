@@ -28,7 +28,6 @@ class HomeFragment : Fragment() {
         composeView.setContent {
             HomeScreen(
                 onExercisesClick = {
-                    Log.d("test on click home","on excersices clicked")
                    findNavController().navigate(R.id.action_homeFragment_to_testFragment)
                 },
                 onAdvicesClick = {
